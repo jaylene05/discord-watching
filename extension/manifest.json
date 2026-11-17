@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Discord Watching",
+  "version": "0.1.0",
+  "description": "Shows what you're watching in your Discord status.",
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://tv.apple.com/*"],
+      "js": ["services/appletv.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
